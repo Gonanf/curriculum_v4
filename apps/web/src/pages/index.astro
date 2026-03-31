@@ -1,5 +1,6 @@
 ---
 import Main from "@/layouts/main.astro"
+import Card from "@/components/card.astro"
 import { Button } from "@workspace/ui/components/button"
 import {
   HoverCard,
@@ -55,11 +56,11 @@ import {
           <Button
             className="w-fit border-2 border-dotted bg-primary p-7 text-lg text-primary-foreground uppercase hover:bg-primary/80"
           >
-            Ver mis proyectos <ArrowRightIcon className="size-8" />
+	  <a href="/proyectos">Ver mis proyectos</a><ArrowRightIcon className="size-8" />
           </Button>
           <Button
             className="w-fit border-2 border-dotted bg-accent/50 p-7 text-lg text-secondary-foreground uppercase hover:bg-accent/30"
-            variant="default">Contactame</Button
+	    variant="default"><a href="/contactos">Contactame</a></Button
           >
         </div>
         <div class="flex items-center">
@@ -85,73 +86,76 @@ import {
     </h1>
     <div class="container mx-auto mt-10 grid grid-cols-3 gap-15">
       <!-- Desarrollo web -->
-      <div
-        class="relative grid gap-3 border-2 border-dotted bg-card p-5 transition-transform duration-300 ease-in-out hover:-translate-y-5"
-      >
+     <Card animate={true} className="relative border-2 border-dotted bg-card p-5 w-fit">
+	      <div slot="body">
         <CodeIcon
-          className="border-2 border-dotted bg-primary/10 fill-primary p-2"
-          size="48"
+          className="border-2 border-dotted bg-primary/10 fill-primary p-2 mb-4"
+	  size="48"
+
         />
-        <h2 class="font-mono text-lg font-bold text-foreground uppercase">
+        <h2 class="font-mono text-xl font-bold text-foreground uppercase mb-3">
           Desarrollo web
         </h2>
         <p class="font-mono text-muted-foreground">
           Realizo paginas web rapidas y adaptadas a las necesidades modernas
           utilizando Nuxt, Astro, Next.js, Vue, React y entre otras
           herramientas.
-        </p>
-        <!--<br />
-				<hr class="border-2 border-dotted" />
-				<p class="text-muted-foreground font-mono">Tengo experiencia en el desarrollo de Front End, Back End, bases de datos y Devops con proyectos que actualmente estan disponibles para visitar.</p> -->
-        <AtomIcon
+	</p>
+	      </div>
+	      
+	      <AtomIcon
           className="absolute -top-4 -left-4 rounded-full border-2 border-dotted bg-background fill-accent-foreground p-2"
-          size="48"
+	  size="48"
+	  slot="lu-icon"
         />
-      </div>
+      </Card>
 
       <!-- Automatizaciones -->
-      <div
-        class="relative grid gap-3 border-2 border-dotted bg-card p-5 transition-transform duration-300 ease-in-out hover:-translate-y-5"
-      >
+      <Card animate={true} className="relative border-2 border-dotted bg-card p-5 w-fit">
+	      <div slot="body">
         <RobotIcon
-          className="border-2 border-dotted bg-primary/10 fill-primary p-2"
-          size="48"
+          className="border-2 border-dotted bg-primary/10 fill-primary p-2 mb-4"
+	  size="48"
+
         />
-        <h2 class="font-mono text-lg font-bold text-foreground uppercase">
+        <h2 class="font-mono text-xl font-bold text-foreground uppercase mb-3">
           Automatizaciones
         </h2>
         <p class="font-mono text-muted-foreground">
           Realize automatizaciones con N8N y workers de varios lenguajes que
           aumentaron la calidad, eficiencia y alcance de los procesos que me
           presentaron.
-        </p>
+	</p>
+	      </div>
         <TimerIcon
           className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform rounded-full border-2 border-dotted bg-background fill-accent-foreground p-2"
-          size="48"
+	  size="48"
+	  slot="cb-icon"
         />
-      </div>
+      </Card>
 
       <!-- Devops -->
-      <div
-        class="relative grid gap-3 border-2 border-dotted bg-card p-5 transition-transform duration-300 ease-in-out hover:-translate-y-5"
-      >
+      <Card animate={true} className="relative border-2 border-dotted bg-card p-5 w-fit">
+	      <div slot="body">
         <CloudIcon
-          className="border-2 border-dotted bg-primary/10 fill-primary p-2"
-          size="48"
+          className="border-2 border-dotted bg-primary/10 fill-primary p-2 mb-4"
+	  size="48"
         />
-        <h2 class="font-mono text-lg font-bold text-foreground uppercase">
+        <h2 class="font-mono text-lg font-bold text-foreground uppercase mb-3">
           DevOps
         </h2>
         <p class="font-mono text-muted-foreground">
           Estoy acostumbrado a resolver problemas en servidores de Linux,
           locales, remotos o distribuidos.<br />Tengo experiencia en
           contenedores Docker y en Docker Compose.
-        </p>
+	</p>
+	      </div>
         <CpuIcon
           className="absolute -top-4 -right-4 rounded-full border-2 border-dotted bg-background fill-accent-foreground p-2"
-          size="48"
+	  size="48"
+	  slot="ru-icon"
         />
-      </div>
+      </Card>
     </div>
   </div>
 </Main>

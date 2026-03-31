@@ -1,0 +1,29 @@
+---
+import Main from "@/layouts/main.astro"
+import Card from "@/components/card.astro"
+
+const proyectos = [
+{img: "/arcteto.png",titulo: "Arcteto",descripcion: "Una distribucion de Arch Linux tecnica, enfocada en la eficiencia, el desarrollo de software y mi ecosistema de scripts / herramientas", tags: ["Sistemas operativos","Linux","Arch Linux"],url: "https://github.com/Gonanf/arcteto"},
+{img: "/kateto.png",titulo: "Kateto",descripcion: "Un LLM de razonamiento entrenado a partir de mis proyectos, esta diseñado para ser critico, opinionado y a funcionar como un 'Rubber Ducky' el cual es una metodologia para razonar un problema con una conversacion consigo mismo hasta encontrar una solucion. \n\nAdemas del LLM, Kateto tiene un ecosistema propio de scripts, agentes y subagentes para automatizar mucha parte de mis proyectos personales.", tags: ["LLM","Agentes","Fine Tuned"],url: "https://github.com/Gonanf/kateto"},
+{img: "/sherut.png",titulo: "Sherut (Automatizacion)",descripcion: "Un sistema de automatizacion en N8N con un frontend en Astro que permite realizar seguimientos de clientes / campañas de marketing sin tener mucha friccion del lado del usuario y cliente.", tags: ["Automatizacion","N8N"]},
+]
+---
+
+<Main>
+
+	<div class="dotted-background py-32">
+		<div class="container mx-auto">
+		<h1 class="font-mono text-5xl font-bold uppercase">Mis Proyectos</h1>
+		<div class="my-12 h-1 w-20 border-2 border-primary"></div>
+
+		<p class="font-mono text-lg text-muted-foreground mb-16">Realize multiples proyectos, pruebas y productos, estos son los que considero los mejores.</p>
+
+		{ proyectos.map((p) => (
+		<Card animate="true">
+		<img src={p.img} />
+		<h3 class="font-mono" />
+		</Card>
+		)}
+	</div>
+
+</Main>
